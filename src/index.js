@@ -1,28 +1,28 @@
-
-import Phaser from "phaser";
+import Phaser from 'phaser';
 
 const config = {
-  type: Phaser.AUTO,
+  type: Phaser.AUTO, // sets WebGL (Web Graphics Library - JS API 2D/3D renderer) as default
   width: 800,
   height: 600,
   physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: { y: 200 }
-    }
+    // arcade physics plugin, manages physic simulations
+    default: 'arcade'
   },
   scene: {
-    preload: preload,
-    create: create
+    preLoad, //instead of preLoader: preLoader - JS Shorthand
+    create
   }
 };
 
+// loads assets like images, music, animations ...
+function preLoad(){
+  // 'this' context - scene
+  // contains functions and properties we can use
+  debugger
+}
+
+function create(){
+  debugger
+}
+
 new Phaser.Game(config);
-
-function preload () {
-  this.load.image('sky', 'assets/sky.png');
-}
-
-function create () {
-  this.add.image(400, 300, 'sky');
-}
